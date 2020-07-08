@@ -1,10 +1,10 @@
 import React from 'react';
 // import logo from './logo.svg';
 import data from './data';
-import {BrowserRouter,Route} from 'react-router-dom';
+import {BrowserRouter,Route,Link} from 'react-router-dom';
 import './App.css';
-import HomeScreen from './Screens/HomeScreen';
-import ProductScreen from './Screens/ProductScreen';
+import HomeScreen from './screens/HomeScreen';
+import ProductScreen from './screens/ProductScreen';
 
 function App() {
 
@@ -21,8 +21,9 @@ function App() {
         <div className="brand">
            <button onClick ={ openMenu }>
               &#9776;
-          </button> 
-          <a href="index.html">Amazon_Clone</a>
+          </button>
+          <Link to="/">Amazon_Clone</Link> 
+          {/* <a href="index.html">Amazon_Clone</a> */}
         </div>
         <div className="header-links">
           <a href="cart.html">Cart</a>
