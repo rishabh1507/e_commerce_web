@@ -4,6 +4,7 @@ import data from './data';
 import {BrowserRouter,Route,Link} from 'react-router-dom';
 import './App.css';
 import HomeScreen from './screens/HomeScreen';
+import CartScreen from './screens/CartScreen';
 import ProductScreen from './screens/ProductScreen';
 
 function App() {
@@ -45,7 +46,8 @@ function App() {
       <main className="main">
         <div className="content">
           <Route path="/products/:id" component={ProductScreen} />
-          <Route path="/" component={HomeScreen} />
+          <Route path="/cart/:id?" component={CartScreen} />
+          <Route path="/" exact={true} component={HomeScreen} />
            
             </div>
         </main>
