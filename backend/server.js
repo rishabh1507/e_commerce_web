@@ -3,9 +3,13 @@ import data from './data';
 import dotenv from 'dotenv';
 import config from './config';
 import mongoose from 'mongoose';
+import bodyParser from 'body-parser';
 import userRoute from './routes/userRoute';
 
 dotenv.config();
+
+const app = express();
+app.use(bodyParser.json());
 
 const mongodbUrl = config.MONGODB_URL;
 mongoose.connect(mongodbUrl,{
@@ -14,7 +18,6 @@ mongoose.connect(mongodbUrl,{
     useCreateIndex:true
 }).catch(error => console.log(error.reason));
 
-const app = express();
 
 app.use("/api/users",userRoute);
 

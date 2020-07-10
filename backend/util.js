@@ -1,12 +1,35 @@
- import jwt from 'jsonwebtoken';
- import config from './config';
+//  import jwt from 'jsonwebtoken';
+//  import config from './config';
 
- const getToken = (user) => {
-     return jwt.signin(user, config.JWT_SECRET,{
-        expiresIn:'48h'
-     })
- }
+//  const getToken = (user) => {
+//      return jwt.sign({
+//          _id: user._id,
+//          name: user.name,
+//          email: user.email,
+//          isAdmin: user.isAdmin,
+        
+//     }, config.JWT_SECRET, {
+//     expiresIn: '48h'
+//     })  
+//  }
 
- export {
-     getToken
- }
+//  export {
+//      getToken
+//  }
+import jwt from 'jsonwebtoken';
+import config from './config';
+const getToken = (user) => {
+    return jwt.sign({
+        _id: user._id,
+        name: user.name,
+        email: user.email,
+        isAdmin: user.isAdmin,
+
+    }, config.JWT_SECRET, {
+        expiresIn: '48h'
+    })
+}
+
+export {
+    getToken
+} 
